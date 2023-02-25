@@ -18,15 +18,18 @@ vim.g.mapleader = " " -- make sure to set `mapleader` before lazy so your mappin
 require("lazy").setup({
     { 'nvim-telescope/telescope.nvim', dependencies = { 'nvim-lua/plenary.nvim' } },
     'nvim-tree/nvim-tree.lua',
+    'numToStr/Comment.nvim',
 }, {
     git = { url_format = 'git@github.com:%s.git' },
 })
 
--- nvim-tree
+-- nvim-tree/nvim-tree.lua
 require("nvim-tree").setup()
 vim.keymap.set("n", "<leader>nn", ":NvimTreeToggle<CR>", {})
 
--- telescope
-
+-- nvim-telescope/telescope.nvim
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+
+-- numToStr/Comment.nvim
+require('Comment').setup()

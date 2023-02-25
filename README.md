@@ -9,6 +9,7 @@ git clone git@github.com:fanlia/minimal.nvim.git ~/.config/nvim
 ## plugins
 - nvim-telescope/telescope.nvim
 - nvim-tree/nvim-tree.lua
+- numToStr/Comment.nvim
 
 ## keymapping
 
@@ -20,4 +21,8 @@ local leader = ' '
 
 -- nvim-telescope/telescope.nvim
 -- find_files <leader>ff
+
+-- numToStr/Comment.nvim
+-- comment_line gcc
+-- comment_block gc
 ```
