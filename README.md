@@ -1,5 +1,14 @@
 # minimal.nvim
 
+minimal nvim config, hope you like it!
+
+## what is it
+
+- find files
+- file explorer
+- comment
+- color
+
 ## install
 
 ```sh
@@ -29,3 +38,7 @@ local leader = ' '
 
 ## colorscheme
 - folke/tokyonight.nvim
+
+## license
+
+- mit
