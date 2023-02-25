@@ -26,3 +26,6 @@ local leader = ' '
 -- comment_line gcc
 -- comment_block gc
 ```
+
+## colorscheme
+- folke/tokyonight.nvim
