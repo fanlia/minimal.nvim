@@ -21,9 +21,12 @@ require("lazy").setup({
   { 'nvim-telescope/telescope.nvim', dependencies = { 'nvim-lua/plenary.nvim' } },
   'nvim-tree/nvim-tree.lua',
   'numToStr/Comment.nvim',
+  'folke/tokyonight.nvim',
 }, {
   git = { url_format = 'git@github.com:%s.git' },
 })
+
+vim.cmd[[colorscheme tokyonight]]
 
 -- nvim-tree/nvim-tree.lua
 require("nvim-tree").setup({
