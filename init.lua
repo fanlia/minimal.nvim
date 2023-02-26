@@ -23,6 +23,7 @@ require("lazy").setup({
   'numToStr/Comment.nvim',
   'folke/tokyonight.nvim',
   'windwp/nvim-autopairs',
+  'lukas-reineke/indent-blankline.nvim',
 }, {
   git = { url_format = 'git@github.com:%s.git' },
 })
@@ -43,4 +44,8 @@ vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 require('Comment').setup()
 
 -- windwp/nvim-autopairs
-require("nvim-autopairs").setup{}
+require('nvim-autopairs').setup{}
+
+-- lukas-reineke/indent-blankline.nvim
+require('indent_blankline').setup{}
+

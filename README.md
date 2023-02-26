@@ -9,6 +9,7 @@ minimal nvim config, hope you like it!
 - comment
 - color
 - autopairs
+- indent line
 
 ## install
 
@@ -23,6 +24,7 @@ git clone git@github.com:fanlia/minimal.nvim.git ~/.config/nvim
 - numToStr/Comment.nvim
 - folke/tokyonight.nvim
 - windwp/nvim-autopairs
+- lukas-reineke/indent-blankline.nvim
 
 ## keymapping
 
