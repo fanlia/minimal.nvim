@@ -16,9 +16,11 @@ git clone git@github.com:fanlia/minimal.nvim.git ~/.config/nvim
 ```
 
 ## plugins
+
 - nvim-telescope/telescope.nvim
 - nvim-tree/nvim-tree.lua
 - numToStr/Comment.nvim
+- folke/tokyonight.nvim
 
 ## keymapping
 
@@ -37,6 +39,7 @@ local leader = ' '
 ```
 
 ## colorscheme
+
 - folke/tokyonight.nvim
 
 ## license
