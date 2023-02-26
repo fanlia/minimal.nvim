@@ -8,6 +8,7 @@ minimal nvim config, hope you like it!
 - file explorer
 - comment
 - color
+- autopairs
 
 ## install
 
@@ -21,6 +22,7 @@ git clone git@github.com:fanlia/minimal.nvim.git ~/.config/nvim
 - nvim-tree/nvim-tree.lua
 - numToStr/Comment.nvim
 - folke/tokyonight.nvim
+- windwp/nvim-autopairs
 
 ## keymapping
 

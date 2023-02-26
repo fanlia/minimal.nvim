@@ -22,6 +22,7 @@ require("lazy").setup({
   'nvim-tree/nvim-tree.lua',
   'numToStr/Comment.nvim',
   'folke/tokyonight.nvim',
+  'windwp/nvim-autopairs',
 }, {
   git = { url_format = 'git@github.com:%s.git' },
 })
@@ -40,3 +41,6 @@ vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 
 -- numToStr/Comment.nvim
 require('Comment').setup()
+
+-- windwp/nvim-autopairs
+require("nvim-autopairs").setup{}
