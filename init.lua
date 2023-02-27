@@ -38,9 +38,7 @@ local plugins = {
 -- try to load myplugins
 local status_ok, myplugins = pcall(require, "myplugins")
 if status_ok then
-  for _, myplugin in ipairs(myplugins) do
-    plugins[#plugins + 1] = myplugin
-  end
+  vim.list_extend(plugins, myplugins)
 end
 
 -- install plugins
