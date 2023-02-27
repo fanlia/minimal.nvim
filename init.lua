@@ -30,7 +30,7 @@ require('lazy').setup({
   'folke/tokyonight.nvim',
   'windwp/nvim-autopairs',
   'lukas-reineke/indent-blankline.nvim',
-  { import = 'plugins' },                       -- support custom plugins at ./lua/plugins/*.lua
+  { import = 'myplugins' },                       -- support custom plugins at ./lua/myplugins.lua
 }, {
   git = { url_format = 'git@github.com:%s.git' },
 })

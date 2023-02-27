@@ -51,7 +51,7 @@ local leader = ' '
 ## custom plugins
 
 ```lua
--- ./lua/plugins/myplugins.lua
+-- ./lua/myplugins.lua
 
 return {
   'ziglang/zig.vim',
