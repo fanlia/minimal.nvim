@@ -37,12 +37,12 @@ local leader = ' '
 
 | plugin | func | keymapping |
 | --- | --- | --- |
-| nvim-tree/nvim-tree.lua | toggle | <leader>nn |
-| nvim-telescope/telescope.nvim | find_files | <leader>ff |
-| nvim-telescope/telescope.nvim | live_grep | <leader>fg |
-| nvim-telescope/telescope.nvim | find_buffers | <leader>fb |
-| numToStr/Comment.nvim | comment_line | gcc |
-| numToStr/Comment.nvim | comment_block | gc |
+| nvim-tree/nvim-tree.lua | toggle tree | \<leader\>nn |
+| nvim-telescope/telescope.nvim | find files | \<leader\>ff |
+| nvim-telescope/telescope.nvim | live grep | \<leader\>fg |
+| nvim-telescope/telescope.nvim | find buffers | \<leader\>fb |
+| numToStr/Comment.nvim | comment line | gcc |
+| numToStr/Comment.nvim | comment block | gc |
 
 ## colorscheme
 
