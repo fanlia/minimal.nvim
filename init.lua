@@ -1,4 +1,5 @@
 
+-- install plugin manager
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -6,12 +7,13 @@ if not vim.loop.fs_stat(lazypath) then
     'clone',
     '--filter=blob:none',
     'git@github.com:folke/lazy.nvim.git',
-    '--branch=stable', -- latest stable release
+    '--branch=stable',                          -- latest stable release
     lazypath,
   })
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- keymappings
 vim.g.mapleader = ' '                           -- make sure to set `mapleader` before lazy so your mappings are correct
 vim.opt.expandtab = true                        -- convert tabs to spaces
 vim.opt.shiftwidth = 2                          -- the number of spaces inserted for each indentation
@@ -23,18 +25,30 @@ vim.opt.undofile = true                         -- undo file
 vim.opt.undolevels = 100                        -- undo file levels
 vim.opt.list = true                             -- show strange char
 
-require('lazy').setup({
+-- minimal plguins
+local plugins = {
   { 'nvim-telescope/telescope.nvim', dependencies = { 'nvim-lua/plenary.nvim' } },
   'nvim-tree/nvim-tree.lua',
   'numToStr/Comment.nvim',
   'folke/tokyonight.nvim',
   'windwp/nvim-autopairs',
   'lukas-reineke/indent-blankline.nvim',
-  { import = 'myplugins' },                       -- support custom plugins at ./lua/myplugins.lua
-}, {
+}
+
+-- try to load myplugins
+local status_ok, myplugins = pcall(require, "myplugins")
+if status_ok then
+  for _, myplugin in ipairs(myplugins) do
+    plugins[#plugins + 1] = myplugin
+  end
+end
+
+-- install plugins
+require('lazy').setup(plugins, {
   git = { url_format = 'git@github.com:%s.git' },
 })
 
+-- folke/tokyonight.nvim
 vim.cmd[[colorscheme tokyonight]]
 
 -- nvim-tree/nvim-tree.lua

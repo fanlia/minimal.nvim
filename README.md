@@ -19,15 +19,6 @@ minimal nvim config, hope you like it!
 git clone git@github.com:fanlia/minimal.nvim.git ~/.config/nvim
 ```
 
-## plugins
-
-- nvim-telescope/telescope.nvim
-- nvim-tree/nvim-tree.lua
-- numToStr/Comment.nvim
-- folke/tokyonight.nvim
-- windwp/nvim-autopairs
-- lukas-reineke/indent-blankline.nvim
-
 ## keymapping
 
 ```lua
@@ -44,10 +35,6 @@ local leader = ' '
 | numToStr/Comment.nvim | comment line | gcc |
 | numToStr/Comment.nvim | comment block | gc |
 
-## colorscheme
-
-- folke/tokyonight.nvim
-
 ## custom plugins
 
 ```lua
@@ -58,6 +45,19 @@ return {
   'cheap-glitch/vim-v',
 }
 ```
+
+## plugins
+
+- nvim-telescope/telescope.nvim
+- nvim-tree/nvim-tree.lua
+- numToStr/Comment.nvim
+- folke/tokyonight.nvim
+- windwp/nvim-autopairs
+- lukas-reineke/indent-blankline.nvim
+
+## colorscheme
+
+- folke/tokyonight.nvim
 
 ## license
 
