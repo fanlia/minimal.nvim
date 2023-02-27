@@ -36,6 +36,7 @@ local leader = ' '
 
 -- nvim-telescope/telescope.nvim
 -- find_files <leader>ff
+-- buffers <leader>fb
 
 -- numToStr/Comment.nvim
 -- comment_line gcc
