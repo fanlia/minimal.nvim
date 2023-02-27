@@ -33,22 +33,31 @@ git clone git@github.com:fanlia/minimal.nvim.git ~/.config/nvim
 ```lua
 local leader = ' '
 
--- nvim-tree/nvim-tree.lua
--- toggle <leader>nn
-
--- nvim-telescope/telescope.nvim
--- find_files <leader>ff
--- live_grep <leader>fg
--- buffers <leader>fb
-
--- numToStr/Comment.nvim
--- comment_line gcc
--- comment_block gc
 ```
+
+| plugin | func | keymapping |
+| --- | --- | --- |
+| nvim-tree/nvim-tree.lua | toggle | <leader>nn |
+| nvim-telescope/telescope.nvim | find_files | <leader>ff |
+| nvim-telescope/telescope.nvim | live_grep | <leader>fg |
+| nvim-telescope/telescope.nvim | find_buffers | <leader>fb |
+| numToStr/Comment.nvim | comment_line | gcc |
+| numToStr/Comment.nvim | comment_block | gc |
 
 ## colorscheme
 
 - folke/tokyonight.nvim
+
+## custom plugins
+
+```lua
+-- ./lua/plugins/myplugins.lua
+
+return {
+  'ziglang/zig.vim',
+  'cheap-glitch/vim-v',
+}
+```
 
 ## license
 
