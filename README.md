@@ -10,6 +10,8 @@ minimal nvim config, hope you like it!
 - color
 - autopairs
 - indent line
+- buffer explorer
+- grep
 
 ## install
 
