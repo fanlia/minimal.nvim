@@ -17,6 +17,9 @@ minimal nvim config, hope you like it!
 
 ```sh
 git clone git@github.com:fanlia/minimal.nvim.git ~/.config/nvim
+
+nvim
+# after plugins installed, press `q` to close the installation window
 ```
 
 ## keymapping
@@ -38,7 +41,8 @@ local leader = ' '
 ## custom plugins
 
 ```lua
--- ./lua/myplugins.lua
+-- create file ./lua/myplugins.lua
+-- return a list of lazy.vim plugin spec
 
 return {
   'ziglang/zig.vim',
@@ -58,6 +62,11 @@ return {
 ## colorscheme
 
 - folke/tokyonight.nvim
+
+## thanks
+
+- https://github.com/amix/vimrc
+- https://github.com/folke/lazy.nvim
 
 ## license
 
