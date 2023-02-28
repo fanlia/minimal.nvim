@@ -40,9 +40,10 @@ local leader = ' '
 
 ## custom plugins
 
+- https://github.com/folke/lazy.nvim
+
 ```lua
 -- create file ./lua/myplugins.lua
--- return a list of lazy.vim plugin spec
 
 return {
   'ziglang/zig.vim',
@@ -66,7 +67,6 @@ return {
 ## thanks
 
 - https://github.com/amix/vimrc
-- https://github.com/folke/lazy.nvim
 
 ## license
 
