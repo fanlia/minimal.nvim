@@ -1,4 +1,5 @@
 
+url_format = 'git@github.com:%s.git'
 -- install plugin manager
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
@@ -6,7 +7,7 @@ if not vim.loop.fs_stat(lazypath) then
     'git',
     'clone',
     '--filter=blob:none',
-    'git@github.com:folke/lazy.nvim.git',
+    string.format(url_format, 'lazy.nvim'),
     '--branch=stable',                          -- latest stable release
     lazypath,
   })
@@ -43,7 +44,7 @@ end
 
 -- install plugins
 require('lazy').setup(plugins, {
-  git = { url_format = 'git@github.com:%s.git' },
+  git = { url_format = url_format },
 })
 
 -- folke/tokyonight.nvim
