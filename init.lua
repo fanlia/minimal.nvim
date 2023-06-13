@@ -53,6 +53,7 @@ vim.cmd[[colorscheme tokyonight]]
 -- nvim-tree/nvim-tree.lua
 require('nvim-tree').setup({
   view = { side = 'right' },
+  git = { ignore = false },
 })
 vim.keymap.set('n', '<leader>nn', ':NvimTreeToggle<CR>', {})
 
