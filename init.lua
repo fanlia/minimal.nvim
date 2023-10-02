@@ -70,5 +70,5 @@ require('Comment').setup()
 require('nvim-autopairs').setup()
 
 -- lukas-reineke/indent-blankline.nvim
-require('indent_blankline').setup()
+require("ibl").setup()
 
