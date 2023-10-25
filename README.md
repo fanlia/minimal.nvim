@@ -53,16 +53,16 @@ return {
 
 ## plugins
 
-- nvim-telescope/telescope.nvim
-- nvim-tree/nvim-tree.lua
-- numToStr/Comment.nvim
-- folke/tokyonight.nvim
-- windwp/nvim-autopairs
-- lukas-reineke/indent-blankline.nvim
+- https://github.com/nvim-telescope/telescope.nvim
+- https://github.com/nvim-tree/nvim-tree.lua
+- https://github.com/numToStr/Comment.nvim
+- https://github.com/folke/tokyonight.nvim
+- https://github.com/windwp/nvim-autopairs
+- https://github.com/lukas-reineke/indent-blankline.nvim
 
 ## colorscheme
 
-- folke/tokyonight.nvim
+- https://github.com/folke/tokyonight.nvim
 
 ## thanks
 
