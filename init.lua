@@ -117,4 +117,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 require('nvim-treesitter.configs').setup({
   ensure_installed = {'typescript', 'javascript', 'python'},
+  highlight = {
+    enable = true,
+  },
 })
