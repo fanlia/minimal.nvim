@@ -83,5 +83,5 @@ local lspconfig = require('lspconfig')
 lspconfig.tsserver.setup({})
 
 require('nvim-treesitter.configs').setup({
-  ensure_installed = {'typescript'},
+  ensure_installed = {'typescript', 'javascript', 'python'},
 })
