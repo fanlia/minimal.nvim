@@ -34,10 +34,14 @@ local plugins = {
   'folke/tokyonight.nvim',
   'windwp/nvim-autopairs',
   'lukas-reineke/indent-blankline.nvim',
+  'williamboman/mason.nvim',
+  'williamboman/mason-lspconfig.nvim',
+  'neovim/nvim-lspconfig',
+  {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'},
 }
 
 -- try to load myplugins
-local status_ok, myplugins = pcall(require, "myplugins")
+local status_ok, myplugins = pcall(require, 'myplugins')
 if status_ok then
   vim.list_extend(plugins, myplugins)
 end
@@ -70,5 +74,14 @@ require('Comment').setup()
 require('nvim-autopairs').setup()
 
 -- lukas-reineke/indent-blankline.nvim
-require("ibl").setup()
+require('ibl').setup()
 
+-- 'williamboman/mason.nvim',
+require('mason').setup()
+require('mason-lspconfig').setup()
+local lspconfig = require('lspconfig')
+lspconfig.tsserver.setup({})
+
+require('nvim-treesitter.configs').setup({
+  ensure_installed = {'typescript'},
+})
