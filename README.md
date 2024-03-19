@@ -41,7 +41,8 @@ local leader = ' '
 | numToStr/Comment.nvim | comment line | gcc |
 | numToStr/Comment.nvim | comment block | gc |
 | neovim/nvim-lspconfig | go to definition | gd |
-| stevearc/conform.nvim | html/json/javascript formatter | cf |
+| neovim/nvim-lspconfig | hover signature | K |
+| stevearc/conform.nvim | html/json/javascript/typescript formatter | cf |
 
 ## custom plugins
 
@@ -64,6 +65,10 @@ return {
 - https://github.com/folke/tokyonight.nvim
 - https://github.com/windwp/nvim-autopairs
 - https://github.com/lukas-reineke/indent-blankline.nvim
+- https://github.com/williamboman/mason.nvim
+- https://github.com/williamboman/mason-lspconfig.nvim
+- https://github.com/nvim-treesitter/nvim-treesitter
+- https://github.com/stevearc/conform.nvim
 
 ## colorscheme
 
