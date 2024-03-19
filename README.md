@@ -37,6 +37,7 @@ local leader = ' '
 | nvim-telescope/telescope.nvim | find buffers | \<leader\>fb |
 | numToStr/Comment.nvim | comment line | gcc |
 | numToStr/Comment.nvim | comment block | gc |
+| neovim/nvim-lspconfig | go to definition | gd |
 
 ## custom plugins
 
