@@ -38,6 +38,7 @@ local leader = ' '
 | numToStr/Comment.nvim | comment line | gcc |
 | numToStr/Comment.nvim | comment block | gc |
 | neovim/nvim-lspconfig | go to definition | gd |
+| stevearc/conform.nvim | html/json/javascript formatter | cf |
 
 ## custom plugins
 

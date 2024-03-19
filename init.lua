@@ -38,6 +38,7 @@ local plugins = {
   'williamboman/mason-lspconfig.nvim',
   'neovim/nvim-lspconfig',
   {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'},
+  'stevearc/conform.nvim',
 }
 
 -- try to load myplugins
@@ -77,10 +78,12 @@ require('nvim-autopairs').setup()
 require('ibl').setup()
 
 -- 'williamboman/mason.nvim',
-require('mason').setup()
-require('mason-lspconfig').setup({
-  ensure_installed = { 'pyright', 'tsserver' },
+-- 'williamboman/mason-lspconfig.nvim',
+-- 'neovim/nvim-lspconfig',
+require('mason').setup({
+  ensure_installed = { 'pyright', 'tsserver', 'prettier' },
 })
+require('mason-lspconfig').setup()
 local lspconfig = require('lspconfig')
 lspconfig.pyright.setup({})
 lspconfig.tsserver.setup({})
@@ -115,9 +118,22 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
+-- nvim-treesitter/nvim-treesitter
 require('nvim-treesitter.configs').setup({
   ensure_installed = {'typescript', 'javascript', 'python'},
   highlight = {
     enable = true,
   },
 })
+
+-- 'stevearc/conform.nvim',
+require("conform").setup({
+  formatters_by_ft = {
+    javascript = { "prettier" },
+    json = { "prettier" },
+    html = { "prettier" },
+  },
+})
+vim.keymap.set('n', '<leader>cf', function()
+  require("conform").format({ async = true, lsp_fallback = true })
+end, {})
