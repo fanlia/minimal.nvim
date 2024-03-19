@@ -80,10 +80,13 @@ require('ibl').setup()
 -- 'williamboman/mason.nvim',
 -- 'williamboman/mason-lspconfig.nvim',
 -- 'neovim/nvim-lspconfig',
-require('mason').setup({
-  ensure_installed = { 'pyright', 'tsserver', 'prettier' },
+require('mason').setup()
+require('mason-lspconfig').setup({
+  ensure_installed = {
+    'pyright',
+    'tsserver',
+  },
 })
-require('mason-lspconfig').setup()
 local lspconfig = require('lspconfig')
 lspconfig.pyright.setup({})
 lspconfig.tsserver.setup({})

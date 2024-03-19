@@ -20,6 +20,9 @@ git clone git@github.com:fanlia/minimal.nvim.git ~/.config/nvim
 
 nvim
 # after plugins installed, press `q` to close the installation window
+
+# install formatter
+:MasonInstall prettier
 ```
 
 ## keymapping
