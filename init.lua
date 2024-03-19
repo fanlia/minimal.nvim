@@ -132,6 +132,7 @@ require("conform").setup({
     javascript = { "prettier" },
     json = { "prettier" },
     html = { "prettier" },
+    typescript = { "prettier" },
   },
 })
 vim.keymap.set('n', '<leader>cf', function()
