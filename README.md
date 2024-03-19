@@ -12,6 +12,8 @@ minimal nvim config, hope you like it!
 - indent line
 - buffer explorer
 - grep
+- lsp
+- prettier
 
 ## install
 
@@ -42,7 +44,7 @@ local leader = ' '
 | numToStr/Comment.nvim | comment block | gc |
 | neovim/nvim-lspconfig | go to definition | gd |
 | neovim/nvim-lspconfig | hover signature | K |
-| stevearc/conform.nvim | html/json/javascript/typescript formatter | cf |
+| stevearc/conform.nvim | html/json/javascript/typescript formatter | \<leader\>cf |
 
 ## custom plugins
 
