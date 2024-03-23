@@ -67,6 +67,7 @@ return {
 - https://github.com/folke/tokyonight.nvim
 - https://github.com/windwp/nvim-autopairs
 - https://github.com/lukas-reineke/indent-blankline.nvim
+- https://github.com/neovim/nvim-lspconfig
 - https://github.com/williamboman/mason.nvim
 - https://github.com/williamboman/mason-lspconfig.nvim
 - https://github.com/nvim-treesitter/nvim-treesitter
