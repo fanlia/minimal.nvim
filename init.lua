@@ -35,8 +35,6 @@ local plugins = {
   'windwp/nvim-autopairs',
   'lukas-reineke/indent-blankline.nvim',
   'williamboman/mason.nvim',
-  'williamboman/mason-lspconfig.nvim',
-  'neovim/nvim-lspconfig',
   {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'},
   'stevearc/conform.nvim',
 }
@@ -78,37 +76,10 @@ require('nvim-autopairs').setup()
 require('ibl').setup()
 
 -- 'williamboman/mason.nvim',
--- 'williamboman/mason-lspconfig.nvim',
--- 'neovim/nvim-lspconfig',
 require('mason').setup()
-require('mason-lspconfig').setup({
-  ensure_installed = {
-    'pyright',
-    'tsserver',
-  },
-})
-local lspconfig = require('lspconfig')
-lspconfig.pyright.setup({})
-lspconfig.tsserver.setup({})
--- Use LspAttach autocommand to only map the following keys
--- after the language server attaches to the current buffer
-vim.api.nvim_create_autocmd('LspAttach', {
-  group = vim.api.nvim_create_augroup('UserLspConfig', {}),
-  callback = function(ev)
-    -- Enable completion triggered by <c-x><c-o>
-    vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
-
-    -- Buffer local mappings.
-    -- See `:help vim.lsp.*` for documentation on any of the below functions
-    local opts = { buffer = ev.buf }
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-  end,
-})
 
 -- nvim-treesitter/nvim-treesitter
 require('nvim-treesitter.configs').setup({
-  ensure_installed = {'typescript', 'javascript', 'python'},
   highlight = {
     enable = true,
   },
@@ -124,5 +95,5 @@ require("conform").setup({
   },
 })
 vim.keymap.set('n', '<leader>cf', function()
-  require("conform").format({ async = true, lsp_fallback = true })
+  require("conform").format({ async = true })
 end, {})

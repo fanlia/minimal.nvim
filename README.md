@@ -12,7 +12,6 @@ minimal nvim config, hope you like it!
 - indent line
 - buffer explorer
 - grep
-- lsp
 - prettier
 
 ## install
@@ -23,7 +22,7 @@ git clone git@github.com:fanlia/minimal.nvim.git ~/.config/nvim
 nvim
 # after plugins installed, press `q` to close the installation window
 
-# install formatter
+# install prettier
 :MasonInstall prettier
 ```
 
@@ -42,9 +41,7 @@ local leader = ' '
 | nvim-telescope/telescope.nvim | find buffers | \<leader\>fb |
 | numToStr/Comment.nvim | comment line | gcc |
 | numToStr/Comment.nvim | comment block | gc |
-| neovim/nvim-lspconfig | go to definition | gd |
-| neovim/nvim-lspconfig | hover signature | K |
-| stevearc/conform.nvim | html/json/javascript/typescript formatter | \<leader\>cf |
+| stevearc/conform.nvim | prettier | \<leader\>cf |
 
 ## custom plugins
 
@@ -67,9 +64,7 @@ return {
 - https://github.com/folke/tokyonight.nvim
 - https://github.com/windwp/nvim-autopairs
 - https://github.com/lukas-reineke/indent-blankline.nvim
-- https://github.com/neovim/nvim-lspconfig
 - https://github.com/williamboman/mason.nvim
-- https://github.com/williamboman/mason-lspconfig.nvim
 - https://github.com/nvim-treesitter/nvim-treesitter
 - https://github.com/stevearc/conform.nvim
 
