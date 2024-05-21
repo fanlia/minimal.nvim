@@ -39,8 +39,8 @@ local leader = ' '
 | nvim-telescope/telescope.nvim | find files | \<leader\>ff |
 | nvim-telescope/telescope.nvim | live grep | \<leader\>fg |
 | nvim-telescope/telescope.nvim | find buffers | \<leader\>fb |
-| numToStr/Comment.nvim | comment line | gcc |
-| numToStr/Comment.nvim | comment block | gc |
+| nvim builtin | comment line | gcc |
+| nvim builtin | comment block | gc |
 | stevearc/conform.nvim | prettier | \<leader\>cf |
 
 ## custom plugins
@@ -60,7 +60,6 @@ return {
 
 - https://github.com/nvim-telescope/telescope.nvim
 - https://github.com/nvim-tree/nvim-tree.lua
-- https://github.com/numToStr/Comment.nvim
 - https://github.com/folke/tokyonight.nvim
 - https://github.com/windwp/nvim-autopairs
 - https://github.com/lukas-reineke/indent-blankline.nvim
