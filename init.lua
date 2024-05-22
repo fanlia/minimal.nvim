@@ -33,9 +33,7 @@ local plugins = {
   'folke/tokyonight.nvim',
   'windwp/nvim-autopairs',
   'lukas-reineke/indent-blankline.nvim',
-  'williamboman/mason.nvim',
   {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'},
-  'stevearc/conform.nvim',
 }
 
 -- try to load myplugins
@@ -71,25 +69,9 @@ require('nvim-autopairs').setup()
 -- lukas-reineke/indent-blankline.nvim
 require('ibl').setup()
 
--- 'williamboman/mason.nvim',
-require('mason').setup()
-
 -- nvim-treesitter/nvim-treesitter
 require('nvim-treesitter.configs').setup({
   highlight = {
     enable = true,
   },
 })
-
--- 'stevearc/conform.nvim',
-require("conform").setup({
-  formatters_by_ft = {
-    javascript = { "prettier" },
-    json = { "prettier" },
-    html = { "prettier" },
-    typescript = { "prettier" },
-  },
-})
-vim.keymap.set('n', '<leader>cf', function()
-  require("conform").format({ async = true })
-end, {})
