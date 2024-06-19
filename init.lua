@@ -25,6 +25,8 @@ vim.opt.cursorline = true                       -- highlight current line
 vim.opt.undofile = true                         -- undo file
 vim.opt.undolevels = 100                        -- undo file levels
 vim.opt.list = true                             -- show strange char
+vim.opt.foldmethod = "indent"                   -- foldmethod
+vim.opt.foldenable = false                      -- nofold at startup
 
 -- minimal plguins
 local plugins = {
