@@ -1,16 +1,11 @@
 
 url_format = 'git@github.com:%s.git'
--- install plugin manager
-local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    'git',
-    'clone',
-    '--filter=blob:none',
-    string.format(url_format, 'folke/lazy.nvim'),
-    '--branch=stable',                          -- latest stable release
-    lazypath,
-  })
+-- Bootstrap lazy.nvim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  local lazyrepo = string.format(url_format, 'folke/lazy.nvim')
+  print(lazypath, lazyrepo)
+  vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
 end
 vim.opt.rtp:prepend(lazypath)
 
@@ -44,8 +39,9 @@ if status_ok then
   vim.list_extend(plugins, myplugins)
 end
 
--- install plugins
-require('lazy').setup(plugins, {
+-- Setup lazy.nvim
+require("lazy").setup({
+  spec = plugins,
   git = { url_format = url_format },
 })
 
