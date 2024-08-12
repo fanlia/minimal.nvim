@@ -59,7 +59,6 @@ return {
 - https://github.com/folke/tokyonight.nvim
 - https://github.com/windwp/nvim-autopairs
 - https://github.com/lukas-reineke/indent-blankline.nvim
-- https://github.com/nvim-treesitter/nvim-treesitter
 
 ## colorscheme
 

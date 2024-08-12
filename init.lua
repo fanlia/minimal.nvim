@@ -30,7 +30,6 @@ local plugins = {
   'folke/tokyonight.nvim',
   'windwp/nvim-autopairs',
   'lukas-reineke/indent-blankline.nvim',
-  {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'},
 }
 
 -- try to load myplugins
@@ -66,10 +65,3 @@ require('nvim-autopairs').setup()
 
 -- lukas-reineke/indent-blankline.nvim
 require('ibl').setup()
-
--- nvim-treesitter/nvim-treesitter
-require('nvim-treesitter.configs').setup({
-  highlight = {
-    enable = true,
-  },
-})
