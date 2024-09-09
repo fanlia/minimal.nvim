@@ -1,10 +1,9 @@
 
-url_format = 'git@github.com:%s.git'
+url_format = 'http://github.com/%s.git'
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = string.format(url_format, 'folke/lazy.nvim')
-  print(lazypath, lazyrepo)
   vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
 end
 vim.opt.rtp:prepend(lazypath)
