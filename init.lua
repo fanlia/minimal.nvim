@@ -1,10 +1,31 @@
 
-url_format = 'http://github.com/%s.git'
+function get_url_format()
+  local handle = io.popen('git remote get-url origin')
+  local result = handle:read('*a')
+  handle:close()
+  if (string.find(result, 'git') == 1) then
+    return 'git@github.com:%s.git'
+  else
+    return 'http://github.com/%s.git'
+  end
+end
+
+url_format = get_url_format()
+
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = string.format(url_format, 'folke/lazy.nvim')
-  vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+  if vim.v.shell_error ~= 0 then
+    vim.api.nvim_echo({
+      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+      { out, "WarningMsg" },
+      { "\nPress any key to exit..." },
+    }, true, {})
+    vim.fn.getchar()
+    os.exit(1)
+  end
 end
 vim.opt.rtp:prepend(lazypath)
 
