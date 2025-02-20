@@ -98,7 +98,6 @@ require('conform').setup({
     typescriptreact = { 'prettier' },
     css = { 'prettier' },
     html = { 'prettier' },
-    xml = { 'prettier' },
     vue = { 'prettier' },
     json = { 'prettier' },
     markdown = { 'prettier' },
