@@ -1,9 +1,8 @@
-
 function get_url_format()
   local handle = io.popen('git remote get-url origin')
   local result = handle:read('*a')
   handle:close()
-  if (string.find(result, 'git') == 1) then
+  if string.find(result, 'git') == 1 then
     return 'git@github.com:%s.git'
   else
     return 'http://github.com/%s.git'
@@ -13,15 +12,15 @@ end
 url_format = get_url_format()
 
 -- Bootstrap lazy.nvim
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = string.format(url_format, 'folke/lazy.nvim')
-  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+  local out = vim.fn.system({ 'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath })
   if vim.v.shell_error ~= 0 then
     vim.api.nvim_echo({
-      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-      { out, "WarningMsg" },
-      { "\nPress any key to exit..." },
+      { 'Failed to clone lazy.nvim:\n', 'ErrorMsg' },
+      { out, 'WarningMsg' },
+      { '\nPress any key to exit...' },
     }, true, {})
     vim.fn.getchar()
     os.exit(1)
@@ -30,18 +29,18 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- options
-vim.g.mapleader = ' '                           -- make sure to set `mapleader` before lazy so your mappings are correct
-vim.opt.expandtab = true                        -- convert tabs to spaces
-vim.opt.shiftwidth = 2                          -- the number of spaces inserted for each indentation
-vim.opt.tabstop = 2                             -- insert 2 spaces for a tab
-vim.opt.number = true                           -- line number
-vim.opt.relativenumber = true                   -- relative line number
-vim.opt.cursorline = true                       -- highlight current line
-vim.opt.undofile = true                         -- undo file
-vim.opt.undolevels = 100                        -- undo file levels
-vim.opt.list = true                             -- show strange char
-vim.opt.foldmethod = "indent"                   -- foldmethod
-vim.opt.foldenable = false                      -- nofold at startup
+vim.g.mapleader = ' ' -- make sure to set `mapleader` before lazy so your mappings are correct
+vim.opt.expandtab = true -- convert tabs to spaces
+vim.opt.shiftwidth = 2 -- the number of spaces inserted for each indentation
+vim.opt.tabstop = 2 -- insert 2 spaces for a tab
+vim.opt.number = true -- line number
+vim.opt.relativenumber = true -- relative line number
+vim.opt.cursorline = true -- highlight current line
+vim.opt.undofile = true -- undo file
+vim.opt.undolevels = 100 -- undo file levels
+vim.opt.list = true -- show strange char
+vim.opt.foldmethod = 'indent' -- foldmethod
+vim.opt.foldenable = false -- nofold at startup
 
 -- minimal plguins
 local plugins = {
@@ -50,6 +49,7 @@ local plugins = {
   'folke/tokyonight.nvim',
   'windwp/nvim-autopairs',
   'lukas-reineke/indent-blankline.nvim',
+  'stevearc/conform.nvim',
 }
 
 -- try to load myplugins
@@ -59,13 +59,13 @@ if status_ok then
 end
 
 -- Setup lazy.nvim
-require("lazy").setup({
+require('lazy').setup({
   spec = plugins,
   git = { url_format = url_format },
 })
 
 -- folke/tokyonight.nvim
-vim.cmd[[colorscheme tokyonight]]
+vim.cmd([[colorscheme tokyonight]])
 
 -- nvim-tree/nvim-tree.lua
 require('nvim-tree').setup({
@@ -85,3 +85,34 @@ require('nvim-autopairs').setup()
 
 -- lukas-reineke/indent-blankline.nvim
 require('ibl').setup()
+
+-- stevearc/conform.nvim
+require('conform').setup({
+  formatters_by_ft = {
+    lua = { 'stylua' },
+    python = { 'isort', 'black' },
+    rust = { 'rustfmt' },
+    javascript = { 'prettier' },
+    typescript = { 'prettier' },
+    javascriptreact = { 'prettier' },
+    typescriptreact = { 'prettier' },
+    css = { 'prettier' },
+    html = { 'prettier' },
+    xml = { 'prettier' },
+    vue = { 'prettier' },
+    json = { 'prettier' },
+    markdown = { 'prettier' },
+  },
+  format_on_save = {
+    timeout_ms = 500,
+    lsp_format = 'fallback',
+  },
+  formatters = {
+    stylua = {
+      prepend_args = { '--indent-type', 'Spaces', '--indent-width', 2, '--quote-style', 'AutoPreferSingle' },
+    },
+    prettier = {
+      prepend_args = { '--no-semi', '--single-quote' },
+    },
+  },
+})

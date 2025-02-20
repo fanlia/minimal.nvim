@@ -12,10 +12,14 @@ minimal nvim config, hope you like it!
 - indent line
 - buffer explorer
 - grep
+- format
 
 ## install
 
 ```sh
+npm i -g prettier
+pip install isort black
+
 git clone git@github.com:fanlia/minimal.nvim.git ~/.config/nvim
 
 nvim
@@ -30,14 +34,15 @@ local leader = ' '
 
 ```
 
-| plugin | func | keymapping |
-| --- | --- | --- |
-| nvim-tree/nvim-tree.lua | toggle tree | \<leader\>nn |
-| nvim-telescope/telescope.nvim | find files | \<leader\>ff |
-| nvim-telescope/telescope.nvim | live grep | \<leader\>fg |
-| nvim-telescope/telescope.nvim | find buffers | \<leader\>fb |
-| nvim builtin | comment line | gcc |
-| nvim builtin | comment block | gc |
+| plugin                        | func           | keymapping   |
+| ----------------------------- | -------------- | ------------ |
+| nvim-tree/nvim-tree.lua       | toggle tree    | \<leader\>nn |
+| nvim-telescope/telescope.nvim | find files     | \<leader\>ff |
+| nvim-telescope/telescope.nvim | live grep      | \<leader\>fg |
+| nvim-telescope/telescope.nvim | find buffers   | \<leader\>fb |
+| stevearc/conform.nvim         | format on save |              |
+| nvim builtin                  | comment line   | gcc          |
+| nvim builtin                  | comment block  | gc           |
 
 ## custom plugins
 
