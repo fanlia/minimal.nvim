@@ -50,6 +50,10 @@ local plugins = {
   'windwp/nvim-autopairs',
   'lukas-reineke/indent-blankline.nvim',
   'stevearc/conform.nvim',
+  {
+    'saghen/blink.cmp',
+    dependencies = { 'rafamadriz/friendly-snippets' },
+  },
 }
 
 -- try to load myplugins
@@ -114,5 +118,16 @@ require('conform').setup({
     prettier = {
       prepend_args = { '--no-semi', '--single-quote' },
     },
+  },
+})
+
+-- saghen/blink.cmp
+require('blink.cmp').setup({
+  keymap = { preset = 'super-tab' },
+  appearance = {
+    nerd_font_variant = 'mono',
+  },
+  sources = {
+    default = { 'lsp', 'path', 'snippets', 'buffer' },
   },
 })

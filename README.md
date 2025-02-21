@@ -13,6 +13,7 @@ minimal nvim config, hope you like it!
 - buffer explorer
 - grep
 - format
+- completion
 
 ## install
 
@@ -41,6 +42,7 @@ local leader = ' '
 | nvim-telescope/telescope.nvim | live grep      | \<leader\>fg |
 | nvim-telescope/telescope.nvim | find buffers   | \<leader\>fb |
 | stevearc/conform.nvim         | format on save |              |
+| saghen/blink.cmp              | completion     |              |
 | nvim builtin                  | comment line   | gcc          |
 | nvim builtin                  | comment block  | gc           |
 
