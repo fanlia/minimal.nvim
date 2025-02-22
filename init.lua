@@ -160,7 +160,7 @@ vim.keymap.set('n', '<leader>ii', ':CodeCompanionChat Toggle<CR>', {})
 
 -- nvim-treesitter/nvim-treesitter
 require('nvim-treesitter.configs').setup({
-  ensure_installed = { 'javascript', 'typescript', 'tsx', 'python', 'lua', 'rust' },
+  ensure_installed = { 'javascript', 'typescript', 'tsx', 'python', 'lua', 'rust', 'graphql' },
   highlight = {
     enable = true,
   },
