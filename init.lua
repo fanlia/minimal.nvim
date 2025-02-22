@@ -53,6 +53,15 @@ local plugins = {
   {
     'saghen/blink.cmp',
     dependencies = { 'rafamadriz/friendly-snippets' },
+    version = '*',
+  },
+  {
+    'olimorris/codecompanion.nvim',
+    config = true,
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'nvim-treesitter/nvim-treesitter',
+    },
   },
 }
 
@@ -131,3 +140,16 @@ require('blink.cmp').setup({
     default = { 'lsp', 'path', 'snippets', 'buffer' },
   },
 })
+
+-- olimorris/codecompanion.nvim
+require('codecompanion').setup({
+  strategies = {
+    chat = {
+      adapter = 'ollama',
+    },
+    inline = {
+      adapter = 'ollama',
+    },
+  },
+})
+vim.keymap.set('n', '<leader>ii', ':CodeCompanionChat Toggle<CR>', {})

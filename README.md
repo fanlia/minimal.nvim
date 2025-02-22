@@ -14,6 +14,7 @@ minimal nvim config, hope you like it!
 - grep
 - format
 - completion
+- llm
 
 ## install
 
@@ -41,6 +42,7 @@ local leader = ' '
 | nvim-telescope/telescope.nvim | find files     | \<leader\>ff |
 | nvim-telescope/telescope.nvim | live grep      | \<leader\>fg |
 | nvim-telescope/telescope.nvim | find buffers   | \<leader\>fb |
+| olimorris/codecompanion.nvim  | llm            | \<leader\>ii |
 | stevearc/conform.nvim         | format on save |              |
 | saghen/blink.cmp              | completion     |              |
 | nvim builtin                  | comment line   | gcc          |
