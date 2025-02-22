@@ -63,6 +63,10 @@ local plugins = {
       'nvim-treesitter/nvim-treesitter',
     },
   },
+  {
+    'MeanderingProgrammer/render-markdown.nvim',
+    ft = { 'markdown', 'codecompanion' },
+  },
 }
 
 -- try to load myplugins

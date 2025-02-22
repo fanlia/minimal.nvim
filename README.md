@@ -36,17 +36,18 @@ local leader = ' '
 
 ```
 
-| plugin                        | func           | keymapping   |
-| ----------------------------- | -------------- | ------------ |
-| nvim-tree/nvim-tree.lua       | toggle tree    | \<leader\>nn |
-| nvim-telescope/telescope.nvim | find files     | \<leader\>ff |
-| nvim-telescope/telescope.nvim | live grep      | \<leader\>fg |
-| nvim-telescope/telescope.nvim | find buffers   | \<leader\>fb |
-| olimorris/codecompanion.nvim  | llm            | \<leader\>ii |
-| stevearc/conform.nvim         | format on save |              |
-| saghen/blink.cmp              | completion     |              |
-| nvim builtin                  | comment line   | gcc          |
-| nvim builtin                  | comment block  | gc           |
+| plugin                                    | func             | keymapping   |
+| ----------------------------------------- | ---------------- | ------------ |
+| nvim-tree/nvim-tree.lua                   | toggle tree      | \<leader\>nn |
+| nvim-telescope/telescope.nvim             | find files       | \<leader\>ff |
+| nvim-telescope/telescope.nvim             | live grep        | \<leader\>fg |
+| nvim-telescope/telescope.nvim             | find buffers     | \<leader\>fb |
+| olimorris/codecompanion.nvim              | llm              | \<leader\>ii |
+| stevearc/conform.nvim                     | format on save   |              |
+| MeanderingProgrammer/render-markdown.nvim | markdown preview |              |
+| saghen/blink.cmp                          | completion       |              |
+| nvim builtin                              | comment line     | gcc          |
+| nvim builtin                              | comment block    | gc           |
 
 ## custom plugins
 
