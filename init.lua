@@ -5,11 +5,11 @@ function get_url_format()
   if string.find(result, 'git') == 1 then
     return 'git@github.com:%s.git'
   else
-    return 'http://github.com/%s.git'
+    return 'https://github.com/%s.git'
   end
 end
 
-url_format = get_url_format()
+local url_format = get_url_format()
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
