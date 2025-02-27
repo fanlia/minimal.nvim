@@ -141,6 +141,17 @@ require('blink.cmp').setup({
 
 -- olimorris/codecompanion.nvim
 require('codecompanion').setup({
+  adapters = {
+    ollama = function()
+      return require('codecompanion.adapters').extend('ollama', {
+        schema = {
+          model = {
+            default = 'qwen2.5-coder:latest',
+          },
+        },
+      })
+    end,
+  },
   strategies = {
     chat = {
       adapter = 'ollama',
