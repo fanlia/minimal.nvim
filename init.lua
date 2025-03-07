@@ -168,6 +168,7 @@ require('codecompanion').setup({
   },
 })
 vim.keymap.set('n', '<leader>ii', ':CodeCompanionChat Toggle<CR>', {})
+vim.keymap.set('n', '<leader>ij', ':CodeCompanion #buffer ', {})
 
 -- nvim-treesitter/nvim-treesitter
 require('nvim-treesitter.configs').setup({

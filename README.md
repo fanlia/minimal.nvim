@@ -42,7 +42,8 @@ local leader = ' '
 | nvim-telescope/telescope.nvim             | find files       | \<leader\>ff |
 | nvim-telescope/telescope.nvim             | live grep        | \<leader\>fg |
 | nvim-telescope/telescope.nvim             | find buffers     | \<leader\>fb |
-| olimorris/codecompanion.nvim              | llm              | \<leader\>ii |
+| olimorris/codecompanion.nvim              | chat buffer      | \<leader\>ii |
+| olimorris/codecompanion.nvim              | inline prompt    | \<leader\>ij |
 | stevearc/conform.nvim                     | format on save   |              |
 | MeanderingProgrammer/render-markdown.nvim | markdown preview |              |
 | saghen/blink.cmp                          | completion       |              |
