@@ -185,3 +185,4 @@ require('mini.diff').setup()
 -- neovim/nvim-lspconfig
 require('lspconfig').ts_ls.setup({})
 require('lspconfig').pyright.setup({})
+require('lspconfig').tailwindcss.setup({})
