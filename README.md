@@ -15,11 +15,13 @@ minimal nvim config, hope you like it!
 - format
 - completion
 - llm
+- lsp
 
 ## install
 
 ```sh
 npm i -g prettier
+npm i -g typescript-language-server pyright
 pip install isort black
 
 git clone git@github.com:fanlia/minimal.nvim.git ~/.config/nvim

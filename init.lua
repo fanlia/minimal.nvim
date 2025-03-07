@@ -68,6 +68,7 @@ local plugins = {
     ft = { 'markdown', 'codecompanion' },
   },
   { 'echasnovski/mini.diff', version = '*' },
+  'neovim/nvim-lspconfig',
 }
 
 -- try to load myplugins
@@ -180,3 +181,7 @@ require('nvim-treesitter.configs').setup({
 
 -- echasnovski/mini.diff
 require('mini.diff').setup()
+
+-- neovim/nvim-lspconfig
+require('lspconfig').ts_ls.setup({})
+require('lspconfig').pyright.setup({})
