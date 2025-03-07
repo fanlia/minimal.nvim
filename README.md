@@ -48,6 +48,7 @@ local leader = ' '
 | nvim-telescope/telescope.nvim             | find buffers     | \<leader\>fb |
 | olimorris/codecompanion.nvim              | chat buffer      | \<leader\>ii |
 | olimorris/codecompanion.nvim              | inline prompt    | \<leader\>ij |
+| neovim/nvim-lspconfig                     | go to definition | \<leader\>gd |
 | stevearc/conform.nvim                     | format on save   |              |
 | MeanderingProgrammer/render-markdown.nvim | markdown preview |              |
 | saghen/blink.cmp                          | completion       |              |
