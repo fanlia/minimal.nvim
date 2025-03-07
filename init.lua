@@ -67,6 +67,7 @@ local plugins = {
     'MeanderingProgrammer/render-markdown.nvim',
     ft = { 'markdown', 'codecompanion' },
   },
+  { 'echasnovski/mini.diff', version = '*' },
 }
 
 -- try to load myplugins
@@ -141,6 +142,11 @@ require('blink.cmp').setup({
 
 -- olimorris/codecompanion.nvim
 require('codecompanion').setup({
+  display = {
+    diff = {
+      provider = 'mini_diff',
+    },
+  },
   adapters = {
     ollama = function()
       return require('codecompanion.adapters').extend('ollama', {
@@ -170,3 +176,6 @@ require('nvim-treesitter.configs').setup({
     enable = true,
   },
 })
+
+-- echasnovski/mini.diff
+require('mini.diff').setup()
