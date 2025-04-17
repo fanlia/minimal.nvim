@@ -71,12 +71,6 @@ local plugins = {
   'neovim/nvim-lspconfig',
 }
 
--- try to load myplugins
-local status_ok, myplugins = pcall(require, 'myplugins')
-if status_ok then
-  vim.list_extend(plugins, myplugins)
-end
-
 -- Setup lazy.nvim
 require('lazy').setup({
   spec = plugins,
@@ -174,7 +168,7 @@ vim.keymap.set('n', '<leader>ij', ':CodeCompanion #buffer ', {})
 
 -- nvim-treesitter/nvim-treesitter
 require('nvim-treesitter.configs').setup({
-  ensure_installed = { 'javascript', 'typescript', 'tsx', 'python', 'lua', 'rust', 'graphql' },
+  ensure_installed = { 'javascript', 'typescript', 'tsx', 'python', 'lua', 'rust', 'graphql', 'v' },
   highlight = {
     enable = true,
   },
