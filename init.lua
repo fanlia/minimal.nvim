@@ -50,24 +50,12 @@ local plugins = {
   'windwp/nvim-autopairs',
   'lukas-reineke/indent-blankline.nvim',
   'stevearc/conform.nvim',
+  'nvim-treesitter/nvim-treesitter',
+  'MeanderingProgrammer/render-markdown.nvim',
   {
     'saghen/blink.cmp',
-    dependencies = { 'rafamadriz/friendly-snippets' },
     version = '*',
   },
-  {
-    'olimorris/codecompanion.nvim',
-    config = true,
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      'nvim-treesitter/nvim-treesitter',
-    },
-  },
-  {
-    'MeanderingProgrammer/render-markdown.nvim',
-    ft = { 'markdown', 'codecompanion' },
-  },
-  { 'echasnovski/mini.diff', version = '*' },
   'neovim/nvim-lspconfig',
 }
 
@@ -136,36 +124,6 @@ require('blink.cmp').setup({
   signature = { enabled = true },
 })
 
--- olimorris/codecompanion.nvim
-require('codecompanion').setup({
-  display = {
-    diff = {
-      provider = 'mini_diff',
-    },
-  },
-  adapters = {
-    ollama = function()
-      return require('codecompanion.adapters').extend('ollama', {
-        schema = {
-          model = {
-            default = 'qwen2.5-coder:latest',
-          },
-        },
-      })
-    end,
-  },
-  strategies = {
-    chat = {
-      adapter = 'ollama',
-    },
-    inline = {
-      adapter = 'ollama',
-    },
-  },
-})
-vim.keymap.set('n', '<leader>ii', ':CodeCompanionChat Toggle<CR>', {})
-vim.keymap.set('n', '<leader>ij', ':CodeCompanion #buffer ', {})
-
 -- nvim-treesitter/nvim-treesitter
 require('nvim-treesitter.configs').setup({
   ensure_installed = { 'javascript', 'typescript', 'tsx', 'python', 'lua', 'rust', 'graphql', 'v' },
@@ -174,11 +132,9 @@ require('nvim-treesitter.configs').setup({
   },
 })
 
--- echasnovski/mini.diff
-require('mini.diff').setup()
-
 -- neovim/nvim-lspconfig
 require('lspconfig').ts_ls.setup({})
 require('lspconfig').pyright.setup({})
 require('lspconfig').tailwindcss.setup({})
 vim.keymap.set('n', '<leader>gd', '<cmd>lua vim.lsp.buf.definition()<CR>', {})
+vim.keymap.set('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', {})

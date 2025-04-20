@@ -14,7 +14,6 @@ minimal nvim config, hope you like it!
 - grep
 - format
 - completion
-- llm
 - lsp
 
 ## install
@@ -46,35 +45,13 @@ local leader = ' '
 | nvim-telescope/telescope.nvim             | find files       | \<leader\>ff |
 | nvim-telescope/telescope.nvim             | live grep        | \<leader\>fg |
 | nvim-telescope/telescope.nvim             | find buffers     | \<leader\>fb |
-| olimorris/codecompanion.nvim              | chat buffer      | \<leader\>ii |
-| olimorris/codecompanion.nvim              | inline prompt    | \<leader\>ij |
 | neovim/nvim-lspconfig                     | go to definition | \<leader\>gd |
+| neovim/nvim-lspconfig                     | show error       | \<leader\>e  |
 | stevearc/conform.nvim                     | format on save   |              |
 | MeanderingProgrammer/render-markdown.nvim | markdown preview |              |
 | saghen/blink.cmp                          | completion       |              |
 | nvim builtin                              | comment line     | gcc          |
 | nvim builtin                              | comment block    | gc           |
-
-## custom plugins
-
-- https://github.com/folke/lazy.nvim
-
-```lua
--- create file ./lua/myplugins.lua
-
-return {
-  'ziglang/zig.vim',
-  'cheap-glitch/vim-v',
-}
-```
-
-## plugins
-
-- https://github.com/nvim-telescope/telescope.nvim
-- https://github.com/nvim-tree/nvim-tree.lua
-- https://github.com/folke/tokyonight.nvim
-- https://github.com/windwp/nvim-autopairs
-- https://github.com/lukas-reineke/indent-blankline.nvim
 
 ## colorscheme
 
