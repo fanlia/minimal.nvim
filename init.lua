@@ -103,6 +103,7 @@ require('conform').setup({
     json = { 'prettier' },
     markdown = { 'prettier' },
     yaml = { 'prettier' },
+    graphql = { 'prettier' },
   },
   format_on_save = {
     timeout_ms = 500,
