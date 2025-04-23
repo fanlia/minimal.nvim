@@ -104,6 +104,7 @@ require('conform').setup({
     markdown = { 'prettier' },
     yaml = { 'prettier' },
     graphql = { 'prettier' },
+    xml = { 'xmlformat' },
   },
   format_on_save = {
     timeout_ms = 500,

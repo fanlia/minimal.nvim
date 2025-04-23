@@ -24,6 +24,7 @@ minimal nvim config, hope you like it!
 npm i -g prettier
 npm i -g typescript-language-server pyright @tailwindcss/language-server
 pip install isort black
+pip install XmlFormatter
 
 git clone git@github.com:fanlia/minimal.nvim.git ~/.config/nvim
 
