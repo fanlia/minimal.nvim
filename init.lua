@@ -1,12 +1,5 @@
 function get_url_format()
-  local handle = io.popen('git remote get-url origin')
-  local result = handle:read('*a')
-  handle:close()
-  if string.find(result, 'git') == 1 then
-    return 'git@github.com:%s.git'
-  else
-    return 'https://github.com/%s.git'
-  end
+  return 'git@github.com:%s.git'
 end
 
 local url_format = get_url_format()
