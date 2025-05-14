@@ -113,6 +113,10 @@ require('conform').setup({
 -- saghen/blink.cmp
 require('blink.cmp').setup({
   keymap = { preset = 'super-tab' },
+  completion = {
+    documentation = { auto_show = true, auto_show_delay_ms = 500 },
+    ghost_text = { enabled = true },
+  },
 })
 
 -- nvim-treesitter/nvim-treesitter
