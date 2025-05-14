@@ -45,10 +45,7 @@ local plugins = {
   'stevearc/conform.nvim',
   'nvim-treesitter/nvim-treesitter',
   'MeanderingProgrammer/render-markdown.nvim',
-  {
-    'saghen/blink.cmp',
-    version = '*',
-  },
+  'saghen/blink.cmp',
   'neovim/nvim-lspconfig',
 }
 
