@@ -113,7 +113,6 @@ require('conform').setup({
 -- saghen/blink.cmp
 require('blink.cmp').setup({
   keymap = { preset = 'super-tab' },
-  signature = { enabled = true },
 })
 
 -- nvim-treesitter/nvim-treesitter
