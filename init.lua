@@ -128,7 +128,7 @@ require('blink.cmp').setup({
 
 -- nvim-treesitter/nvim-treesitter
 require('nvim-treesitter.configs').setup({
-  ensure_installed = { 'javascript', 'typescript', 'tsx', 'python', 'lua', 'rust', 'graphql', 'v' },
+  ensure_installed = { 'javascript', 'typescript', 'tsx', 'python', 'lua', 'rust', 'graphql', 'v', 'zig' },
   highlight = {
     enable = true,
   },
@@ -139,6 +139,7 @@ local capabilities = require('blink.cmp').get_lsp_capabilities()
 require('lspconfig').ts_ls.setup({ capabilities = capabilities })
 require('lspconfig').pyright.setup({ capabilities = capabilities })
 require('lspconfig').tailwindcss.setup({ capabilities = capabilities })
+require('lspconfig').zls.setup({ capabilities = capabilities })
 vim.keymap.set('n', '<leader>gd', '<cmd>lua vim.lsp.buf.definition()<CR>', {})
 vim.keymap.set('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', {})
 
