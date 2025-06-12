@@ -128,7 +128,7 @@ require('blink.cmp').setup({
 
 -- nvim-treesitter/nvim-treesitter
 require('nvim-treesitter.configs').setup({
-  ensure_installed = { 'javascript', 'typescript', 'tsx', 'python', 'lua', 'rust', 'graphql', 'v', 'zig' },
+  ensure_installed = { 'javascript', 'typescript', 'tsx', 'python', 'lua', 'rust', 'graphql', 'v', 'zig', 'prisma' },
   highlight = {
     enable = true,
   },
