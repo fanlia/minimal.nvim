@@ -101,7 +101,6 @@ require('conform').setup({
     markdown = { 'prettier' },
     yaml = { 'prettier' },
     graphql = { 'prettier' },
-    prisma = { 'prisma' },
     xml = { 'xmlformat' },
   },
   format_on_save = {
@@ -114,10 +113,6 @@ require('conform').setup({
     },
     prettier = {
       prepend_args = { '--no-semi', '--single-quote' },
-    },
-    prisma = {
-      command = 'prettier',
-      args = { '--plugin', 'prettier-plugin-prisma', '$FILENAME' },
     },
   },
 })
