@@ -21,7 +21,6 @@ minimal nvim config, hope you like it!
 ```sh
 
 # stylua for lua
-# pgformatter for sql
 npm i -g prettier
 npm i -g typescript-language-server pyright @tailwindcss/language-server
 pip install isort black

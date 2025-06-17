@@ -102,7 +102,6 @@ require('conform').setup({
     yaml = { 'prettier' },
     graphql = { 'prettier' },
     xml = { 'xmlformat' },
-    sql = { 'pg_format' },
   },
   format_on_save = {
     timeout_ms = 500,
