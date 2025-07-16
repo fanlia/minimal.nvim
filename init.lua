@@ -140,6 +140,7 @@ require('lspconfig').ts_ls.setup({ capabilities = capabilities })
 require('lspconfig').pyright.setup({ capabilities = capabilities })
 require('lspconfig').tailwindcss.setup({ capabilities = capabilities })
 require('lspconfig').zls.setup({ capabilities = capabilities })
+require('lspconfig').rust_analyzer.setup({ capabilities = capabilities })
 vim.keymap.set('n', '<leader>gd', '<cmd>lua vim.lsp.buf.definition()<CR>', {})
 vim.keymap.set('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', {})
 
