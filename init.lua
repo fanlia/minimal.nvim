@@ -149,13 +149,13 @@ require('codecompanion').setup({
   adapters = {},
   strategies = {
     chat = {
-      adapter = 'deepseek',
+      adapter = { name = 'deepseek', model = 'deepseek-chat' },
     },
     inline = {
-      adapter = 'deepseek',
+      adapter = { name = 'deepseek', model = 'deepseek-chat' },
     },
     cmd = {
-      adapter = 'deepseek',
+      adapter = { name = 'deepseek', model = 'deepseek-chat' },
     },
   },
 })
