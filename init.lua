@@ -102,6 +102,7 @@ require('conform').setup({
     yaml = { 'prettier' },
     graphql = { 'prettier' },
     xml = { 'xmlformat' },
+    go = { 'goimports' },
   },
   format_on_save = {
     timeout_ms = 500,
@@ -128,7 +129,19 @@ require('blink.cmp').setup({
 
 -- nvim-treesitter/nvim-treesitter
 require('nvim-treesitter.configs').setup({
-  ensure_installed = { 'javascript', 'typescript', 'tsx', 'python', 'lua', 'rust', 'graphql', 'v', 'zig', 'prisma' },
+  ensure_installed = {
+    'javascript',
+    'typescript',
+    'tsx',
+    'python',
+    'lua',
+    'rust',
+    'graphql',
+    'v',
+    'zig',
+    'prisma',
+    'go',
+  },
   highlight = {
     enable = true,
   },
@@ -141,6 +154,7 @@ require('lspconfig').pyright.setup({ capabilities = capabilities })
 require('lspconfig').tailwindcss.setup({ capabilities = capabilities })
 require('lspconfig').zls.setup({ capabilities = capabilities })
 require('lspconfig').rust_analyzer.setup({ capabilities = capabilities })
+require('lspconfig').gopls.setup({ capabilities = capabilities })
 vim.keymap.set('n', '<leader>gd', '<cmd>lua vim.lsp.buf.definition()<CR>', {})
 vim.keymap.set('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', {})
 
