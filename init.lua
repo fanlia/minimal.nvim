@@ -141,12 +141,11 @@ require('nvim-treesitter.configs').setup({
 })
 
 -- neovim/nvim-lspconfig
-local capabilities = require('blink.cmp').get_lsp_capabilities()
-require('lspconfig').ts_ls.setup({ capabilities = capabilities })
-require('lspconfig').pyright.setup({ capabilities = capabilities })
-require('lspconfig').tailwindcss.setup({ capabilities = capabilities })
-require('lspconfig').zls.setup({ capabilities = capabilities })
-require('lspconfig').rust_analyzer.setup({ capabilities = capabilities })
-require('lspconfig').gopls.setup({ capabilities = capabilities })
+vim.lsp.enable('ts_ls')
+vim.lsp.enable('pyright')
+vim.lsp.enable('tailwindcss')
+vim.lsp.enable('zls')
+vim.lsp.enable('rust_analyzer')
+vim.lsp.enable('gopls')
 vim.keymap.set('n', '<leader>gd', '<cmd>lua vim.lsp.buf.definition()<CR>', {})
 vim.keymap.set('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', {})
