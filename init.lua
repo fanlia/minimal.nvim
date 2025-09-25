@@ -47,13 +47,6 @@ local plugins = {
   'MeanderingProgrammer/render-markdown.nvim',
   { 'saghen/blink.cmp', version = '1.*' },
   'neovim/nvim-lspconfig',
-  {
-    'olimorris/codecompanion.nvim',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      'nvim-treesitter/nvim-treesitter',
-    },
-  },
 }
 
 -- Setup lazy.nvim
@@ -157,20 +150,3 @@ require('lspconfig').rust_analyzer.setup({ capabilities = capabilities })
 require('lspconfig').gopls.setup({ capabilities = capabilities })
 vim.keymap.set('n', '<leader>gd', '<cmd>lua vim.lsp.buf.definition()<CR>', {})
 vim.keymap.set('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', {})
-
--- olimorris/codecompanion.nvim
-require('codecompanion').setup({
-  adapters = {},
-  strategies = {
-    chat = {
-      adapter = { name = 'deepseek', model = 'deepseek-chat' },
-    },
-    inline = {
-      adapter = { name = 'deepseek', model = 'deepseek-chat' },
-    },
-    cmd = {
-      adapter = { name = 'deepseek', model = 'deepseek-chat' },
-    },
-  },
-})
-vim.keymap.set('n', '<leader>ii', ':CodeCompanionChat Toggle<CR>', {})
