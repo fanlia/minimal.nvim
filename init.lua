@@ -81,7 +81,7 @@ require('ibl').setup()
 require('conform').setup({
   formatters_by_ft = {
     lua = { 'stylua' },
-    python = { 'isort', 'black' },
+    python = { 'ruff_format' },
     rust = { 'rustfmt' },
     javascript = { 'prettier' },
     typescript = { 'prettier' },
@@ -94,7 +94,8 @@ require('conform').setup({
     markdown = { 'prettier' },
     yaml = { 'prettier' },
     graphql = { 'prettier' },
-    xml = { 'xmlformat' },
+    xml = { 'prettier' },
+    php = { 'prettier' },
     go = { 'goimports' },
   },
   format_on_save = {
@@ -106,7 +107,8 @@ require('conform').setup({
       prepend_args = { '--indent-type', 'Spaces', '--indent-width', 2, '--quote-style', 'AutoPreferSingle' },
     },
     prettier = {
-      prepend_args = { '--no-semi', '--single-quote' },
+      command = vim.fn.expand('~/.config/nvim/node_modules/.bin/prettier'),
+      prepend_args = { '--config', vim.fn.expand('~/.config/nvim/prettier.config.js') },
     },
   },
 })
