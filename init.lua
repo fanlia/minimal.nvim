@@ -34,6 +34,7 @@ vim.opt.undolevels = 100 -- undo file levels
 vim.opt.list = true -- show strange char
 vim.opt.foldmethod = 'indent' -- foldmethod
 vim.opt.foldenable = false -- nofold at startup
+vim.opt.clipboard = 'unnamedplus' -- clipboard
 
 -- minimal plguins
 local plugins = {
