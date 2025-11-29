@@ -137,6 +137,7 @@ require('nvim-treesitter.configs').setup({
     'zig',
     'prisma',
     'go',
+    'java',
   },
   highlight = {
     enable = true,
