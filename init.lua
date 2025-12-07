@@ -98,6 +98,8 @@ require('conform').setup({
     xml = { 'prettier' },
     php = { 'prettier' },
     go = { 'goimports' },
+    c = { 'clang-format' },
+    cpp = { 'clang-format' },
   },
   format_on_save = {
     timeout_ms = 500,
@@ -138,6 +140,8 @@ require('nvim-treesitter.configs').setup({
     'prisma',
     'go',
     'java',
+    'cpp',
+    'c',
   },
   highlight = {
     enable = true,
@@ -151,5 +155,6 @@ vim.lsp.enable('tailwindcss')
 vim.lsp.enable('zls')
 vim.lsp.enable('rust_analyzer')
 vim.lsp.enable('gopls')
+vim.lsp.enable('clangd')
 vim.keymap.set('n', '<leader>gd', '<cmd>lua vim.lsp.buf.definition()<CR>', {})
 vim.keymap.set('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', {})
