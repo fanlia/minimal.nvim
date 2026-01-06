@@ -142,6 +142,7 @@ require('nvim-treesitter.configs').setup({
     'java',
     'cpp',
     'c',
+    'c_sharp',
   },
   highlight = {
     enable = true,
