@@ -1,5 +1,3 @@
-vim.loader.enable()
-
 function get_url_format()
   return 'git@github.com:%s.git'
 end
@@ -101,6 +99,12 @@ require('conform').setup({
 
 require('blink.cmp').setup({
   keymap = { preset = 'super-tab' },
+  completion = {
+    documentation = {
+      auto_show = true,
+      auto_show_delay_ms = 500,
+    },
+  },
 })
 
 vim.lsp.enable({ 'ts_ls', 'pyright', 'tailwindcss', 'zls', 'rust_analyzer', 'gopls', 'clangd' })
