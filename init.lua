@@ -1,10 +1,11 @@
+vim.loader.enable()
+
 function get_url_format()
   return 'git@github.com:%s.git'
 end
 
 local url_format = get_url_format()
 
--- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = string.format(url_format, 'folke/lazy.nvim')
@@ -21,64 +22,51 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- options
-vim.g.mapleader = ' ' -- make sure to set `mapleader` before lazy so your mappings are correct
-vim.opt.expandtab = true -- convert tabs to spaces
-vim.opt.shiftwidth = 2 -- the number of spaces inserted for each indentation
-vim.opt.tabstop = 2 -- insert 2 spaces for a tab
-vim.opt.number = true -- line number
-vim.opt.relativenumber = true -- relative line number
-vim.opt.cursorline = true -- highlight current line
-vim.opt.undofile = true -- undo file
-vim.opt.undolevels = 100 -- undo file levels
-vim.opt.list = true -- show strange char
-vim.opt.foldmethod = 'indent' -- foldmethod
-vim.opt.foldenable = false -- nofold at startup
-vim.opt.clipboard = 'unnamedplus' -- clipboard
+vim.g.mapleader = ' '
 
--- minimal plguins
+vim.g.netrw_banner = 0
+vim.g.netrw_browse_split = 4
+vim.g.netrw_liststyle = 3
+vim.g.netrw_sort_by = 'name'
+vim.g.netrw_keepdir = 0
+vim.g.netrw_winsize = 25
+vim.g.netrw_confirm = 0
+vim.g.netrw_use_trash = 0
+
+vim.opt.expandtab = true
+vim.opt.shiftwidth = 2
+vim.opt.tabstop = 2
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.cursorline = true
+vim.opt.undofile = true
+vim.opt.list = true
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.clipboard = 'unnamedplus'
+
 local plugins = {
-  { 'nvim-telescope/telescope.nvim', dependencies = { 'nvim-lua/plenary.nvim' } },
-  'nvim-tree/nvim-tree.lua',
-  'folke/tokyonight.nvim',
-  'windwp/nvim-autopairs',
-  'lukas-reineke/indent-blankline.nvim',
-  'stevearc/conform.nvim',
-  'nvim-treesitter/nvim-treesitter',
-  'MeanderingProgrammer/render-markdown.nvim',
+  {
+    'nvim-telescope/telescope.nvim',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+  },
+  { 'stevearc/conform.nvim' },
   { 'saghen/blink.cmp', version = '1.*' },
   'neovim/nvim-lspconfig',
 }
 
--- Setup lazy.nvim
 require('lazy').setup({
   spec = plugins,
   git = { url_format = url_format },
 })
 
--- folke/tokyonight.nvim
-vim.cmd([[colorscheme tokyonight]])
+vim.cmd([[colorscheme catppuccin]])
 
--- nvim-tree/nvim-tree.lua
-require('nvim-tree').setup({
-  view = { side = 'right' },
-  git = { ignore = false },
-})
-vim.keymap.set('n', '<leader>nn', ':NvimTreeToggle<CR>', {})
-
--- nvim-telescope/telescope.nvim
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+vim.keymap.set('n', '<leader>nn', ':Lexplore<CR>', { desc = 'File explorer' })
+vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Find files' })
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Live grep' })
+vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Buffers' })
 
--- windwp/nvim-autopairs
-require('nvim-autopairs').setup()
-
--- lukas-reineke/indent-blankline.nvim
-require('ibl').setup()
-
--- stevearc/conform.nvim
 require('conform').setup({
   formatters_by_ft = {
     lua = { 'stylua' },
@@ -98,64 +86,27 @@ require('conform').setup({
     xml = { 'prettier' },
     php = { 'prettier' },
     go = { 'goimports' },
-    c = { 'clang-format' },
-    cpp = { 'clang-format' },
   },
-  format_on_save = {
-    timeout_ms = 500,
-    lsp_format = 'fallback',
-  },
+  format_on_save = { timeout_ms = 500, lsp_format = 'fallback' },
   formatters = {
     stylua = {
       prepend_args = { '--indent-type', 'Spaces', '--indent-width', 2, '--quote-style', 'AutoPreferSingle' },
     },
     prettier = {
-      command = vim.fn.expand('~/.config/nvim/node_modules/.bin/prettier'),
+      command = 'prettier',
       prepend_args = { '--config', vim.fn.expand('~/.config/nvim/prettier.config.js') },
     },
   },
 })
 
--- saghen/blink.cmp
 require('blink.cmp').setup({
   keymap = { preset = 'super-tab' },
-  completion = {
-    documentation = { auto_show = true, auto_show_delay_ms = 500 },
-    ghost_text = { enabled = true },
-  },
 })
 
--- nvim-treesitter/nvim-treesitter
-require('nvim-treesitter.configs').setup({
-  ensure_installed = {
-    'javascript',
-    'typescript',
-    'tsx',
-    'python',
-    'lua',
-    'rust',
-    'graphql',
-    'v',
-    'zig',
-    'prisma',
-    'go',
-    'java',
-    'cpp',
-    'c',
-    'c_sharp',
-  },
-  highlight = {
-    enable = true,
-  },
-})
+vim.lsp.enable({ 'ts_ls', 'pyright', 'tailwindcss', 'zls', 'rust_analyzer', 'gopls', 'clangd' })
 
--- neovim/nvim-lspconfig
-vim.lsp.enable('ts_ls')
-vim.lsp.enable('pyright')
-vim.lsp.enable('tailwindcss')
-vim.lsp.enable('zls')
-vim.lsp.enable('rust_analyzer')
-vim.lsp.enable('gopls')
-vim.lsp.enable('clangd')
-vim.keymap.set('n', '<leader>gd', '<cmd>lua vim.lsp.buf.definition()<CR>', {})
-vim.keymap.set('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', {})
+vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, { desc = 'Go to definition' })
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostics' })
+vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = 'Code action' })
+vim.keymap.set('n', '<leader>cr', vim.lsp.buf.rename, { desc = 'Rename' })
+vim.keymap.set('n', 'gr', vim.lsp.buf.references, { desc = 'References' })

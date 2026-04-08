@@ -4,55 +4,60 @@ minimal nvim config, hope you like it!
 
 ## what is it
 
-- find files
-- file explorer
-- comment
-- color
-- autopairs
-- indent line
-- buffer explorer
-- grep
-- format
-- completion
-- lsp
+- find files (Telescope)
+- file explorer (netrw built-in)
+- comment (nvim builtin)
+- colorscheme (Catppuccin)
+- buffer explorer (Telescope)
+- grep/search (Telescope)
+- format on save (Conform.nvim)
+- completion (Blink.cmp)
+- LSP (go-to-definition, diagnostics, code actions)
 
 ## install
 
 ```sh
-
-# stylua for lua
-npm i -g prettier
-npm i -g typescript-language-server pyright @tailwindcss/language-server
-pip install isort black
-pip install XmlFormatter
-
 git clone git@github.com:fanlia/minimal.nvim.git ~/.config/nvim
-
 nvim
-# after plugins installed, press `q` to close the installation window
-
 ```
 
 ## keymapping
 
-```lua
-local leader = ' '
+| Key              | Action           | Description     |
+| ---------------- | ---------------- | --------------- |
+| \<leader\>=space | leader key       | leader key      |
+| \<leader\>nn     | file explorer    | netrw sidebar   |
+| \<leader\>ff     | find files       | fuzzy finder    |
+| \<leader\>fg     | live grep        | grep/search     |
+| \<leader\>fb     | find buffers     | buffer explorer |
+| \<leader\>gd     | go to definition | LSP             |
+| \<leader\>e      | diagnostics      | LSP             |
+| \<leader\>ca     | code action      | LSP             |
+| \<leader\>cr     | rename symbol    | LSP             |
+| gr               | references       | LSP             |
+| \<leader\>f      | format           | LSP             |
+| ]d / [d          | diagnostics nav  | LSP             |
+| gcc              | comment line     | nvim builtin    |
+| gc               | comment block    | nvim builtin    |
 
-```
+**File management:**
 
-| plugin                                    | func             | keymapping   |
-| ----------------------------------------- | ---------------- | ------------ |
-| nvim-tree/nvim-tree.lua                   | toggle tree      | \<leader\>nn |
-| nvim-telescope/telescope.nvim             | find files       | \<leader\>ff |
-| nvim-telescope/telescope.nvim             | live grep        | \<leader\>fg |
-| nvim-telescope/telescope.nvim             | find buffers     | \<leader\>fb |
-| neovim/nvim-lspconfig                     | go to definition | \<leader\>gd |
-| neovim/nvim-lspconfig                     | show error       | \<leader\>e  |
-| stevearc/conform.nvim                     | format on save   |              |
-| MeanderingProgrammer/render-markdown.nvim | markdown preview |              |
-| saghen/blink.cmp                          | completion       |              |
-| nvim builtin                              | comment line     | gcc          |
-| nvim builtin                              | comment block    | gc           |
+- `<leader>nn` - Open file explorer (netrw sidebar)
+- `:e path/file.ts` - Create/open file
+- `:!rm %` - Delete current file
+
+**In netrw explorer** (native keybindings):
+| Key | Action |
+|-----|--------|
+| `<Enter>` | Open (dir: navigate / file: **same window**) |
+| `-` | Parent directory |
+| `%` | New file |
+| `d` | New folder |
+| `D` | **Delete** file/folder |
+| `R` | **Rename** file/folder |
+| `q` | Close (quit) |
+
+**Note:** D and R work immediately (no confirmation)
 
 ## colorscheme
 
