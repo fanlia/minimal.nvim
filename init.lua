@@ -25,7 +25,6 @@ vim.g.mapleader = ' '
 vim.g.netrw_banner = 0
 vim.g.netrw_browse_split = 4
 vim.g.netrw_liststyle = 3
-vim.g.netrw_sort_by = 'name'
 vim.g.netrw_keepdir = 0
 vim.g.netrw_winsize = 25
 vim.g.netrw_confirm = 0
@@ -107,7 +106,7 @@ require('blink.cmp').setup({
   },
 })
 
-vim.lsp.enable({ 'ts_ls', 'pyright', 'tailwindcss', 'zls', 'rust_analyzer', 'gopls', 'clangd' })
+vim.lsp.enable({ 'ts_ls', 'pyright', 'tailwindcss', 'zls', 'rust_analyzer', 'gopls' })
 
 vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, { desc = 'Go to definition' })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostics' })
