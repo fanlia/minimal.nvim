@@ -51,7 +51,7 @@ require('lazy').setup({
   git = { url_format = url_format },
 })
 
-vim.cmd([[colorscheme catppuccin]])
+vim.cmd.colorscheme('catppuccin')
 
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>nn', ':Lexplore<CR>', { desc = 'File explorer' })
