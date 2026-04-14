@@ -44,6 +44,7 @@ local plugins = {
   { 'stevearc/conform.nvim' },
   { 'saghen/blink.cmp', version = '1.*' },
   'neovim/nvim-lspconfig',
+  'lewis6991/gitsigns.nvim',
 }
 
 require('lazy').setup({
