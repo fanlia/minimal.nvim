@@ -12,7 +12,8 @@ minimal nvim config, hope you like it!
 - grep/search (Telescope)
 - format on save (Conform.nvim)
 - completion (Blink.cmp)
-- LSP (go-to-definition, diagnostics, code actions)
+- git hunk signs (Gitsigns)
+- LSP (uses nvim 0.11+ built-in keymaps, no extra mapping)
 
 ## install
 
@@ -23,22 +24,25 @@ nvim
 
 ## keymapping
 
-| Key              | Action           | Description     |
-| ---------------- | ---------------- | --------------- |
-| \<leader\>=space | leader key       | leader key      |
-| \<leader\>nn     | file explorer    | netrw sidebar   |
-| \<leader\>ff     | find files       | fuzzy finder    |
-| \<leader\>fg     | live grep        | grep/search     |
-| \<leader\>fb     | find buffers     | buffer explorer |
-| \<leader\>gd     | go to definition | LSP             |
-| \<leader\>e      | diagnostics      | LSP             |
-| \<leader\>ca     | code action      | LSP             |
-| \<leader\>cr     | rename symbol    | LSP             |
-| gr               | references       | LSP             |
-| \<leader\>f      | format           | LSP             |
-| ]d / [d          | diagnostics nav  | LSP             |
-| gcc              | comment line     | nvim builtin    |
-| gc               | comment block    | nvim builtin    |
+Only the mappings below are defined by this config; everything else is a nvim default.
+
+| Key                | Action                            | Source           |
+| ------------------ | --------------------------------- | ---------------- |
+| \<leader\> = space | leader key                        | this config      |
+| \<leader\>nn       | file explorer                     | netrw (Lexplore) |
+| \<leader\>ff       | find files                        | Telescope        |
+| \<leader\>fg       | live grep                         | Telescope        |
+| \<leader\>fb       | find buffers                      | Telescope        |
+| gd                 | go to definition                  | nvim default     |
+| K                  | hover documentation               | nvim default     |
+| grn / gra / grr    | rename / code action / references | nvim default     |
+| gO                 | document symbols                  | nvim default     |
+| ]d / [d            | next/prev diagnostic              | nvim default     |
+| \<C-w\>d           | diagnostics float                 | nvim default     |
+| gcc / gc           | comment line/block                | nvim default     |
+
+Formatting happens automatically on save (see `formatters_by_ft` in init.lua);
+run `:ConformInfo` to debug, no manual format keymap is defined.
 
 **File management:**
 
@@ -61,7 +65,8 @@ nvim
 
 ## colorscheme
 
-- https://github.com/folke/tokyonight.nvim
+- catppuccin, shipped with Neovim 0.12's runtime (`$VIMRUNTIME/colors/catppuccin.vim`)
+- on Neovim < 0.12 add a plugin (e.g. https://github.com/catppuccin/nvim) before using it
 
 ## thanks
 
