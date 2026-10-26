@@ -39,8 +39,6 @@ local prettier_fts = {
   'yaml',
   'markdown',
   'graphql',
-  'xml',
-  'php',
 }
 local formatters_by_ft = {
   lua = { 'stylua' },
@@ -65,7 +63,8 @@ require('lazy').setup({
             prepend_args = { '--indent-type', 'Spaces', '--indent-width', 2, '--quote-style', 'AutoPreferSingle' },
           },
           prettier = {
-            prepend_args = { '--config', vim.fn.stdpath('config') .. '/prettier.config.js' },
+            -- 走全局 prettier；这里只保留代码风格，不指定 --config
+            prepend_args = { '--no-semi', '--single-quote' },
           },
         },
       },

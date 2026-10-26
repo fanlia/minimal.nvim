@@ -22,6 +22,11 @@ git clone git@github.com:fanlia/minimal.nvim.git ~/.config/nvim
 nvim
 ```
 
+No local npm install. Formatters and LSP servers are expected on `$PATH`:
+`prettier` (global), `stylua`, `ruff`, `rustfmt`, `goimports`,
+plus `typescript-language-server`, `pyright-langserver`, `gopls`, `rust-analyzer`,
+`tailwindcss-language-server`.
+
 ## keymapping
 
 Only the mappings below are defined by this config; everything else is a nvim default.
@@ -51,15 +56,16 @@ run `:ConformInfo` to debug, no manual format keymap is defined.
 - `:!rm %` - Delete current file
 
 **In netrw explorer** (native keybindings):
-| Key | Action |
-|-----|--------|
+
+| Key       | Action                                       |
+| --------- | -------------------------------------------- |
 | `<Enter>` | Open (dir: navigate / file: **same window**) |
-| `-` | Parent directory |
-| `%` | New file |
-| `d` | New folder |
-| `D` | **Delete** file/folder |
-| `R` | **Rename** file/folder |
-| `q` | Close (quit) |
+| `-`       | Parent directory                             |
+| `%`       | New file                                     |
+| `d`       | New folder                                   |
+| `D`       | **Delete** file/folder                       |
+| `R`       | **Rename** file/folder                       |
+| `q`       | Close (quit)                                 |
 
 **Note:** D and R work immediately (no confirmation)
 
